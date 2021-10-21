@@ -13,6 +13,12 @@ const stripe_keys = {
     secrit_key: 'sk_test_51Id9KNCCIKokJJRcJihqJmmjEgkaFC2NQa5jBGGP208qNSy5VdEFYgSpNHV3hs7NiPwAqgMNdkCHdR529GFy0gFi00LZ2Y8YXH'
 }
 
+const jwt_tokens = {
+    access_token_secret: "AATx7RYL39bJhLSCIK2aouwVT6oGBIODylc2jrmN3gHPgC6VHN1vL5Z9lt78",
+    refresh_token_secret: "2YJ5DK26flgLt2EkEgW70YnIiHBnlg4FBtkNCFVzChVpNY1fZPJtcxPLa9Qj" 
+}
+
+
 const base_path = 'http://localhost:3010';
 const dbname = "aladdindbd";
 let config = {
@@ -20,6 +26,7 @@ let config = {
         port: 3011,
         codes: codes,
         base_path: base_path,
+        jwt_tokens: jwt_tokens,
         stripe_keys: stripe_keys,
         mongoDB: `mongodb://localhost:27017/${dbname}`
     },
@@ -27,6 +34,7 @@ let config = {
         port: 3011,
         codes: codes,
         base_path: base_path,
+        jwt_tokens: jwt_tokens,
         stripe_keys: stripe_keys,
         mongoDB: `mongodb://localhost:27017/${dbname}`
     },
@@ -34,6 +42,7 @@ let config = {
         port: 3011,
         codes: codes,
         base_path: base_path,
+        jwt_tokens: jwt_tokens,
         stripe_keys: stripe_keys,
         mongoDB: `mongodb://localhost:27017/${dbname}`
     }

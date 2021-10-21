@@ -7,6 +7,7 @@ const container = awilix.createContainer({
 const UserRepository = require('../repos/UserRepo');
 const CardRepository = require('../repos/CardRepo');
 const PaymentRepository = require('../repos/PaymentRepos');
+const AuthRepository = require('../repos/AuthRepo');
 
 
 container.register({
@@ -17,6 +18,7 @@ container.register({
     userRepository: awilix.asClass(UserRepository).singleton(),
     cardRepository: awilix.asClass(CardRepository).singleton(),
     paymentRepository: awilix.asClass(PaymentRepository).singleton(),
+    authRepository: awilix.asClass(AuthRepository).singleton(),
 });
 
 module.exports = container;  

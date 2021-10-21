@@ -7,6 +7,7 @@ const axios = require('axios');
 // Import database models
 require('./models/User');
 require('./models/Card');
+require('./models/AuthToken');
 require('./models/BillingHistory');
 
 const config = require('./config');

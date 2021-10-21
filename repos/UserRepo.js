@@ -10,8 +10,23 @@ class UserRepository {
         return result;
     }
 
+    async findOneByQuery(query) {
+        let result = await Client.findOne(query);
+        return result;
+    }
+
+    async findAllByQuery(query) {
+        let result = await Client.find(query);
+        return result;
+    }
+
     async getUserById  (id)  {
         let result = await User.findOne({_id: id});
+        return result;
+    }
+
+    async getClientByEmail  (email)  {
+        let result = await User.findOne({email: email});
         return result;
     }
 
