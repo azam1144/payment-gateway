@@ -24,6 +24,7 @@
 		"morgan": "^1.10.0",
 		"node-rsa": "^1.1.1",
 		"nodemailer": "^6.4.2",
-		"shortid": "^2.2.8"
+		"shortid": "^2.2.8",
+		"stripe": "^8.184.0"
 	}
 }

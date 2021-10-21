@@ -5,6 +5,9 @@ const container = awilix.createContainer({
 
 // Repositories
 const UserRepository = require('../repos/UserRepo');
+const CardRepository = require('../repos/CardRepo');
+const PaymentRepository = require('../repos/PaymentRepos');
+
 
 container.register({
     // Here we are telling Awilix how to resolve a
@@ -12,6 +15,8 @@ container.register({
 
     // Repositories
     userRepository: awilix.asClass(UserRepository).singleton(),
+    cardRepository: awilix.asClass(CardRepository).singleton(),
+    paymentRepository: awilix.asClass(PaymentRepository).singleton(),
 });
 
 module.exports = container;  

@@ -2,9 +2,7 @@ const mongoose = require('mongoose');
 const User = mongoose.model('User');
 
 class UserRepository {
-    constructor({subscriptionRepository}){
-        this.subscriptionRepo = subscriptionRepository;
-    }
+    constructor(){}
 
     async createUser (postData)  {
         let user = new User(postData);
@@ -17,8 +15,9 @@ class UserRepository {
         return result;
     }
 
-    async getActiveUsers (from, to)  {
-        const result = await User.find({operator:"telenor", $and:[{added_dtm:{$gte:new Date(from)}}, {added_dtm:{$lte:new Date(to)}}]}, {msisdn:1});
+
+    async updateUser(query, postBody) {
+        let result = await User.updateOne(query, postBody, { new:true });
         return result;
     }
 }
