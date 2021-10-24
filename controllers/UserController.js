@@ -9,7 +9,7 @@ exports.login = async (req, res) => {
 	let {email, password} = req.body;
 
 	if(email && password){
-		let record = await userRepo.get(email, password);
+		let record = await userRepo.findOneByQuery({email: email, password: password});
 		if(record){
 			let accessToken = await authController.generateAccessToken(record);
 			let refreshToken = await authController.generateRefreshToken(record);
@@ -39,7 +39,7 @@ exports.post = async (req, res) => {
 		res.send({code: config.codes.code_error, 'message': 'This email is already exists'});
 	}else{
 		// Saving document
-		let result = await userRepo.create(postData);
+		let result = await userRepo.createUser(postData);
 		res.send({code: config.codes.code_success, data: result});
 	}
 }

@@ -8,6 +8,12 @@ const codes = {
     code_record_deleted: 3,
 }
 
+const currency = {
+    usd: 'usd',
+    aed: 'aed',
+    pk: 'pk'
+}
+
 const stripe_keys = {
     public_key: 'pk_test_51Id9KNCCIKokJJRc31wwOHP2Nj4Ms9eWEL3IviZvThUL7as2tkZ9XSPOUtc4xXjGtARfE4SfdtH0QdskKlBQKhJj003CDVnPm1',
     secrit_key: 'sk_test_51Id9KNCCIKokJJRcJihqJmmjEgkaFC2NQa5jBGGP208qNSy5VdEFYgSpNHV3hs7NiPwAqgMNdkCHdR529GFy0gFi00LZ2Y8YXH'
@@ -25,6 +31,7 @@ let config = {
     development: {
         port: 3011,
         codes: codes,
+        currency: currency,
         base_path: base_path,
         jwt_tokens: jwt_tokens,
         stripe_keys: stripe_keys,
@@ -33,6 +40,7 @@ let config = {
     staging: {
         port: 3011,
         codes: codes,
+        currency: currency,
         base_path: base_path,
         jwt_tokens: jwt_tokens,
         stripe_keys: stripe_keys,
@@ -41,6 +49,7 @@ let config = {
     production: {
         port: 3011,
         codes: codes,
+        currency: currency,
         base_path: base_path,
         jwt_tokens: jwt_tokens,
         stripe_keys: stripe_keys,

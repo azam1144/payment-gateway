@@ -8,7 +8,8 @@ const axios = require('axios');
 require('./models/User');
 require('./models/Card');
 require('./models/AuthToken');
-require('./models/BillingHistory');
+require('./models/Payment');
+require('./models/PGCustomer');
 
 const config = require('./config');
 

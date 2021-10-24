@@ -13,22 +13,21 @@ class paymentService{
             return customer;
         }).catch(function (err) {
             console.log('createCustomer - err: ', err);
-            return err;
+            return false;
         });
     }
 
-    async createCharge(amount){
-        console.log('createCharge - amount: ', amount);
+    async createCharge(amount, customer_id){
         return await stripe.charges.create({
             amount: amount * 100,
-            currency: 'usd',
-            source: 'tok_visa',
-            description: 'Appointment charges',
+            currency: config.currency.usd,
+            customer: customer_id,
+            description: 'Some charge type',
         }).then(charge => {
             return charge;
         }).catch(function (err) {
             console.log('createCharge - err: ', err);
-            return err;
+            return false;
         });
 
     }

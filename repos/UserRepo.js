@@ -11,16 +11,17 @@ class UserRepository {
     }
 
     async findOneByQuery(query) {
-        let result = await Client.findOne(query);
+        let result = await User.findOne(query);
         return result;
     }
 
     async findAllByQuery(query) {
-        let result = await Client.find(query);
+        let result = await User.find(query);
         return result;
     }
 
     async getUserById  (id)  {
+        console.log('id: ', id);
         let result = await User.findOne({_id: id});
         return result;
     }

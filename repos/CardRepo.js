@@ -12,17 +12,26 @@ class CardRepository {
     }
 
     async updateCard(query, postBody) {
-        let result = await Card.updateOne(query, postBody, { new:true });
+        let result = await Card.updateOne(query, postBody, { upsert: true });
         return result;
     }
 
-    async getByUserId(query) {
+    async updateAllCard(query, postBody) {
+        let result = await Card.updateMany(query, postBody);
+        return result;
+    }
+
+    async get(query) {
+        return Card.find(query);
+    }
+
+    async getOneByQuery(query) {
         let card = Card.findOne(query);
         return card;
     }
 
-    async getCustomer(query) {
-        let card = Card.findOne(query);
+    async delete(query) {
+        let card = Card.findOneAndRemove(query);
         return card;
     }
 }

@@ -1,16 +1,16 @@
 const mongoose = require('mongoose');
-const BillingHistory = mongoose.model('BillingHistory');
+const Payment = mongoose.model('Payment');
 
-class paymentRepos{
+class PaymentRepos{
     constructor(){
 
     }
 
     async createBilling(postBody) {
-        let billing = new BillingHistory(postBody);
-        let result = await billing.save();
+        let payment = new Payment(postBody);
+        let result = await payment.save();
         return result;
     }
 }
 
-module.exports = paymentRepos;
+module.exports = PaymentRepos;

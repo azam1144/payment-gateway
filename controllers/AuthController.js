@@ -67,5 +67,4 @@ module.exports = {
     generateAccessToken: generateAccessToken,
     refresh: refresh,
     token: token,
-    deleteToken: deleteToken
 }
